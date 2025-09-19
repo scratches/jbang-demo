@@ -35,7 +35,7 @@ $ ./demo.sh
 
 ## Java 17
 
-It also would work with older versions of Java (that don't have the anonymous main feature). The `demo.sh` would need to be renamed `demo.jsh` (for JShell) and the main method would just be a fragment of code rather than a complete class:
+It also would work with older versions of Java (that don't have the anonymous main feature). The `demo.sh` would need to be renamed `demo.jsh` (for JShell) and the main method would just be a fragment of code rather than a complete method:
 
 ```java
 ///usr/bin/env jbang "$0" "$@" ; exit $?
