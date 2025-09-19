@@ -1,18 +1,7 @@
-Run the script with:
 
-```
-$ ./jbang demo.sh
-```
+Here is a demo that embeds the a `jbang` script in a script file that can be distributed as a standalone and runs it with no dependencies. It's a simple Spring Boot application that uses a Java 25 anonymous `main()`. The dependencies are managed by `jbang` and are declared in the script header via a utility catalog in Github.
 
-or if `jbang` is already installed (or this directory is on your `PATH`):
-
-```
-$ ./demo.sh
-```
-
-It's a simple Spring Boot application that uses a Java 25 anonymous `main()`. The dependencies are managed by `jbang` and are declared in the script header via a utility catalog in Github.
-
-There's also a `demo` that embeds the same script in a temporary file and runs it via `jbang` with no dependencies. You can build it with `make`:
+You can build it with `make`:
 
 ```
 $ make
@@ -30,4 +19,16 @@ $ ./demo
 2025-09-18T15:03:49.545+01:00  INFO 1817375 --- [           main] script                                   : No active profile set, falling back to 1 default profile: "default"
 2025-09-18T15:03:49.808+01:00  INFO 1817375 --- [           main] script                                   : Started script in 0.454 seconds (process running for 0.591)
 Hello, World!
+```
+
+Alternatively (during development for instance) you can run the script directly with:
+
+```
+$ ./jbang demo.sh
+```
+
+or if `jbang` is already installed (or this directory is on your `PATH`):
+
+```
+$ ./demo.sh
 ```
