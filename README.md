@@ -32,3 +32,32 @@ or if `jbang` is already installed (or this directory is on your `PATH`):
 ```
 $ ./demo.sh
 ```
+
+## Java 17
+
+It also would work with older versions of Java (that don't have the anonymous main feature). The `demo.sh` would need to be renamed `demo.jsh` (for JShell) and the main method would just be a fragment of code rather than a complete class:
+
+```java
+///usr/bin/env jbang "$0" "$@" ; exit $?
+//SOURCES springbom@scratches
+//SOURCES generic@scratches
+//JAVA 17
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration class Demo {
+
+	@Bean
+	CommandLineRunner runner() {
+		return args -> System.out.println("Hello, World!");
+	}
+
+}
+
+new SpringApplication(GenericApplication.class, Demo.class).run(args);
+```
+
+Then the `Makefile` would need to be adjusted to use `*.jsh` instead of `*.sh`.
